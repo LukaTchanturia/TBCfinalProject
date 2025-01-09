@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title%} Add Product {% endblock %}
+{% block content %}
+<h1>Add Dog</h1>
+<form action="/add_product" method="post" enctype="multipart/form-data">
+    {{form.name(class="form-control mt-2", placeholder="სახელი")}}
+    {{form.img(class="form-control mt-2", placeholder="ფოტო")}}
+    {{form.breed(class="form-control mt-2", placeholder="ჯიში")}}
+    {{form.age(class="form-control mt-2", placeholder="ასაკი")}}
+    {{form.gender(class="form-control mt-2", placeholder="სქესი")}}
+    {{form.description(class="form-control mt-2", placeholder="აღწერა")}}
+    {{form.submit(class="bg-info form-control mt-2")}}
+</form>
+{% endblock %}

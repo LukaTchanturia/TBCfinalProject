@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title%} რეგისტრაცია {% endblock %}
+{% block content %}
+<h1>რეგისტრაცია</h1>
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{form.username(class="form-control mt-2", placeholder="Username")}}
+    {{form.password(class="form-control mt-2", placeholder="Password")}}
+    {{form.repeat_password(class="form-control mt-2", placeholder="Repeat password")}}
+    {{form.submit(class="bg-info form-control mt-2")}}
+</form>
+{% endblock %}

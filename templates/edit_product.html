@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title%} Edit {% endblock %}
+{% block content %}
+<h1>Edit</h1>
+<form method="post" enctype="multipart/form-data">
+    {{form.name(class="form-control mt-2", placeholder="Name")}}
+    {{form.img(class="form-control mt-2", placeholder="Image")}}
+    {{form.breed(class="form-control mt-2", placeholder="Breed")}}
+    {{form.age(class="form-control mt-2", placeholder="Age")}}
+    {{form.gender(class="form-control mt-2", placeholder="Gender")}}
+    {{form.description(class="form-control mt-2", placeholder="description")}}
+    {{form.submit(class="bg-info form-control mt-2")}}
+</form>
+{% endblock %}

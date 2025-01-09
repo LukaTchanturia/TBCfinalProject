@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} პროფილი {% endblock %}
+{% block content %}
+<h1>თქვენი ძაღლები</h1>
+<div class="row">
+    {% for dog in dogs%}
+    <div class="card" style="width: 33rem;border-radius: 1.2rem; background-color:rgb(240,240,240)">
+        <img src="../static/{{dog['img']}}" class="card-img-top" alt="..."
+             style="margin-top: 10px; border-radius: 1.2rem">
+        <div class="card-body">
+            <h5 class="card-title">{{dog.name}}</h5>
+            <p class="card-text">{{dog.description}}</p>
+            <button type="button" class="btn text-dark"
+                    style="background-color: rgb(120, 200, 255)">სქესი:{{dog.gender}}
+            </button>
+            <button type="button" class="btn text-dark"
+                    style="background-color: rgb(120, 200, 255)">ასაკი:{{dog.age}}
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

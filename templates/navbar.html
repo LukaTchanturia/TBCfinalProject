@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-xxl bg-dark-body-tertiary container-fluid"
+     style="background-color: rgb(120, 200, 255)">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="/">
+            <img src="/static/logo-removebg.png" alt="Logo" width="120" height="100"
+                 class="d-inline-block mg-auto">
+            ძაღლთა თავშესაფარი
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if current_user.role == "admin" %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/add_product">ძაღლის დამატება</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/about_us">ჩვენ შესახებ</a>
+                </li>
+            </ul>
+            <a class="navbar-brand mx-auto" href="https://www.tbceducation.ge/">
+                <img src="/static/tbc-logo.png" alt="Logo" width="100" height="100"
+                     class="d-inline-block mg-auto">
+            </a>
+            <form class="d-flex mx-auto" style="max-width: 50%;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                       style="border-color: #3A3B3C;width: 276px;height: 44px;">
+                <button class="btn btn-outline-success" type="submit" style="bg-color: #5AFF21">Search</button>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <img src="/static/accountlogo.jpeg" alt="Logo" width="70" height="70"
+                             class="d-inline-block mg-auto">
+                        Account
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if current_user.is_authenticated %}
+                        <li><a class="dropdown-item" href="/logout" id="logout">გამოსვლა</a></li>
+                        <li><a class="dropdown-item" href="/profile" id="profile">პროფილი</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="/login" id="login">შესვლა</a></li>
+                        <li><a class="dropdown-item" href="/register" id="signup">რეგისტრაცია</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

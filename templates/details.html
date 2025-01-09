@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Details {% endblock %}
+{% block content %}
+<h1>დეტალები</h1>
+<div class="row">
+    <div class="card" style="width: 33rem;border-radius: 1.2rem; background-color:rgb(240,240,240)">
+        <img src="../static/{{dog['img']}}" class="card-img-top" alt="..."
+             style="margin-top: 10px; border-radius: 1.2rem">
+        <div class="card-body">
+            <h5 class="card-title">{{dog.name}}</h5>
+            <p class="card-text">{{dog.description}}</p>
+            {% if current_user.is_authenticated %}
+            <a href="/adopt/{{dog['id']}}" class="btn btn-alert"
+               style="background-color: rgb(90, 160, 255); font-weight: 600">
+                <img src="../static/logo-removebg.png" width="22px" height="18px">
+                აყვანა
+            </a>
+            {% else %}
+            <a href="/login" class="btn btn-alert"
+               style="background-color: rgb(90, 160, 255); font-weight: 600">
+                <img src="../static/logo-removebg.png" width="22px" height="18px">
+                აყვანა
+            </a>
+            {% endif%}
+            <button type="button" class="btn text-dark"
+                    style="background-color: rgb(120, 200, 255)">სქესი:{{dog.gender}}
+            </button>
+            <button type="button" class="btn text-dark"
+                    style="background-color: rgb(120, 200, 255)">ასაკი:{{dog.age}}
+            </button>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
